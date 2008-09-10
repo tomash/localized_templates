@@ -1,0 +1,26 @@
+# = Localized templates
+# 
+# This feature extends Rails template handling and allows the use of localized
+# templates like <code>index-pt-br.html.erb</code>. The plugin will then pick the
+# template matching the currently used locale (<code>I18n#locale</code>).
+#
+# If the localized template isn't found, the plugin will try to render
+# <code>index.html.erb</code>. If <code>index.html.erb</code> doesn't exist, a
+# 404 will be raised.
+#
+# If you have a template that is the same for all languages (like a xml file)
+# just keep it without localization: <code>index.xml.builder</code>.
+
+# Theoretically, we just need to overwrite _pick_template and _pick_partial_template
+# methods in order to have LocalizedTemplates, but memoize stands in the middle
+# since it doesn't see locale changes and would memoize values for only one locale.
+#
+# We can fix this by passing the locale to _pick_template as argument or creating a
+# localized memoize, that would memoize different values based on the locale.
+#
+# For now, we will use the first solution: pass the locale to _pick_template. As
+# consequence, we need to overwrite all methods that call _pick_template.
+#
+require 'localized_templates/actioncontroller/base'
+require 'localized_templates/actionview/base'
+require 'localized_templates/actionview/partial'
