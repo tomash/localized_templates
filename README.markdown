@@ -15,9 +15,9 @@ Installation
 
 To install the plugin, change into an existing Rails application and run
 
-  ruby script/plugin install git://github.com/josevalim/localized_templates.git
+  ruby script/plugin install git://github.com/josevalim/localized-templates.git
 
-This will download the plugin and store it in vendor/plugins/localized_templates.
+This will download the plugin and store it in vendor/plugins/localized-templates.
 
 Adding a new locale
 =================
@@ -47,8 +47,8 @@ If you discover any bugs I'd appreciate if you sent me an e-mail to jose.valim@g
 If you have positive feedback and want to drop me a line that's fine, too! =)
 
 
-Copyright (c) 2008 JosÃ© Valim <jose.valim@gmail.com>, released under the MIT license
+Copyright (c) 2008 José Valim <jose.valim@gmail.com>, released under the MIT license
 
 http://www.pagestacker.com/
 http://josevalim.blogspot.com/
-http://github.com/josevalim/localized_templates
+http://github.com/josevalim/localized-templates
