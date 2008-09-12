@@ -10,7 +10,7 @@ ActionController::Base.class_eval do
     #
     def render_optional_error_file(status_code)
       status = interpret_status(status_code)
-      locale_path = "#{Rails.public_path}/#{status[0,3]}-#{I18n.locale.downcase}.html" if I18n.locale
+      locale_path = "#{Rails.public_path}/#{status[0,3]}-#{I18n.locale}.html" if I18n.locale
       path = "#{Rails.public_path}/#{status[0,3]}.html"
 
       if locale_path && File.exist?(locale_path)

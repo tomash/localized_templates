@@ -41,7 +41,7 @@ ActionView::Base.class_eval do
         template_file_name = path
       end
 
-      if locale && template = _template_view_path_check("#{template_file_name}-#{locale.downcase}")
+      if locale && template = _template_view_path_check("#{template_file_name}-#{locale}")
         template
       elsif template = _template_view_path_check(template_file_name)
         template
