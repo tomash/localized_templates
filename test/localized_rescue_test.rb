@@ -29,14 +29,14 @@ class LocalizedRescueTest < Test::Unit::TestCase
     get :index, :id => 404
 
     assert_response 404
-    body = File.read("#{FIXTURES_PATH}/public/404-en-US.html")
+    body = File.read("#{FIXTURES_PATH}/public/en-US/404.html")
     assert_equal body, @response.body
 
     I18n.locale = 'pt-BR' 
     get :index, :id => 404
 
     assert_response 404
-    body = File.read("#{FIXTURES_PATH}/public/404-pt-BR.html")
+    body = File.read("#{FIXTURES_PATH}/public/pt-BR/404.html")
     assert_equal body, @response.body
   end
 

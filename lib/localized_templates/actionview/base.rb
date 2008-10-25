@@ -15,10 +15,6 @@ ActionView::Base.class_eval do
       if options[:layout]
         _render_with_layout(options, local_assigns, &block)
       elsif options[:file]
-        if options[:use_full_path]
-          ActiveSupport::Deprecation.warn("use_full_path option has been deprecated and has no affect.", caller)
-        end
-
         _pick_template(options[:file], I18n.locale).render_template(self, options[:locals])
       elsif options[:partial]
         render_partial(options)
@@ -33,7 +29,7 @@ ActionView::Base.class_eval do
   private
     def _pick_template(template_path, locale = nil)
       return template_path if template_path.respond_to?(:render)
-      
+
       path = template_path.sub(/^\//, '')
       if m = path.match(/(.*)\.(\w+)$/)
         template_file_name, template_file_extension = m[1], m[2]
@@ -41,8 +37,13 @@ ActionView::Base.class_eval do
         template_file_name = path
       end
 
-      if locale && template = _template_view_path_check("#{template_file_name}-#{locale}")
+      # Try to render locale/controller/action
+      if locale && template = _template_view_path_check("#{locale}/#{template_file_name}")
         template
+      # Try to render controller/locale/action
+      elsif locale && template = _template_view_path_check(template_file_name.gsub(/\//, "/#{locale}/"))
+        template
+      # Try to render controller/action
       elsif template = _template_view_path_check(template_file_name)
         template
       else
@@ -59,6 +60,7 @@ ActionView::Base.class_eval do
         template
       end
     end
+    memoize :_pick_template
     
     def _template_view_path_check(template_file_name)
       # OPTIMIZE: Checks to lookup template in view path

@@ -1,7 +1,7 @@
 # = Localized rescue
 # 
 # This feature extends Rails rescue handling and allows the use of localized
-# rescues like <code>404-en-us.html</code> on the public dir. The plugin will
+# rescues like <code>en-US/404.html</code> on the public dir. The plugin will
 # then pick the rescue page matching the currently used locale
 # (<code>I18n#locale</code>).
 #

@@ -1,11 +1,27 @@
+Copyright (c) 2008 José Valim (jose.valim@gmail.com)
+http://www.pagestacker.com/
+http://josevalim.blogspot.com/
+License: MIT
+Version: 0.2
+
 LocalizedTemplates
-=================
+==================
 
-This plugin uses Rails i18n plugin (http://rails-i18n.org/) to facilitate templates localization.
-You can localize your views and rescue files using the following naming convention:
+This plugin uses Rails I18n (http://rails-i18n.org/) to allow templates localization.
+You can localize your views using the following naming convention:
 
-  <tt>index-pt-br.html.erb</tt>
-  <tt>edit-en-us.rss.builder</tt>
+  <tt>pt-BR/projects/index.html.erb</tt>
+  <tt>en-US/projects/edit.rss.builder</tt>
+  
+  OR:
+
+  <tt>projects/pt-BR/index.html.erb</tt>
+  <tt>projects/en-US/index.html.erb</tt>
+
+And you can also localize rescue files:
+
+  <tt>public/pt-BR/404.html</tt>
+  <tt>public/en-US/404.html</tt>
 
 If you don't want to localize a file (like a xml file), simply don't change it and it will be
 rendered as default to all languages.
@@ -43,12 +59,5 @@ default. Simply put the following line in an initializer in config/initializers 
 Bugs and Feedback
 =================
 
-If you discover any bugs I'd appreciate if you sent me an e-mail to jose.valim@gmail.com
-If you have positive feedback and want to drop me a line that's fine, too! =)
-
-
-Copyright (c) 2008 José Valim <jose.valim@gmail.com>, released under the MIT license
-
-http://www.pagestacker.com/
-http://josevalim.blogspot.com/
-http://github.com/josevalim/localized_templates
+If you discover any bugs, please send me an e-mail to jose.valim@gmail.com
+If you have positive feedback, that's fine too! =)
