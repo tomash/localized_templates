@@ -19,7 +19,7 @@ ActionView::Base.class_eval do
       elsif options[:partial]
         render_partial(options)
       elsif options[:inline]
-        ActionView::InlineTemplate.new(options[:inline], options[:type]).render(self, options[:locals])
+        InlineTemplate.new(options[:inline], options[:type]).render(self, options[:locals])
       elsif options[:text]
         options[:text]
       end
@@ -47,7 +47,7 @@ ActionView::Base.class_eval do
       elsif template = _template_view_path_check(template_file_name)
         template
       else
-        template = ActionView::Template.new(template_path, view_paths)
+        template = Template.new(template_path, view_paths)
 
         if self.class.warn_cache_misses && logger
           logger.debug "[PERFORMANCE] Rendering a template that was " +
@@ -68,7 +68,7 @@ ActionView::Base.class_eval do
         template
       elsif template = self.view_paths[template_file_name]
         template
-      elsif _first_render && template = self.view_paths["#{template_file_name}.#{_first_render.format_and_extension}"]
+      elsif @_render_stack.first && template = self.view_paths["#{template_file_name}.#{@_render_stack.first.format_and_extension}"]
         template
       elsif template_format == :js && template = self.view_paths["#{template_file_name}.html"]
         @template_format = :html

@@ -23,5 +23,6 @@
 # consequence, we need to overwrite all methods that call _pick_template.
 #
 require 'localized_templates/actioncontroller/base'
+require 'localized_templates/actioncontroller/layout'
 require 'localized_templates/actionview/base'
 require 'localized_templates/actionview/partial'
