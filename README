@@ -29,11 +29,24 @@ rendered as default to all languages.
 Installation
 =================
 
-To install the plugin, change into an existing Rails application and run
+Install LocalizedTemplates is very easy. It is stored in GitHub, so if you have
+never installed a gem via GitHub run the following:
 
-  ruby script/plugin install git://github.com/josevalim/localized_templates.git
+  gem sources -a http://gems.github.com
 
-This will download the plugin and store it in vendor/plugins/localized_templates.
+Then install the gem:
+
+  sudo gem install josevalim-localized_templates
+
+In RAILS_ROOT/config/environment.rb:
+
+  config.gem "josevalim-localized_templates",  :lib => "localized_templates", :source => "http://gems.github.com"
+
+If you want it as plugin, just do:
+
+    cd myapp
+    git clone git://github.com/josevalim/localized_templates.git
+    rm -rf vendor/plugins/localized_templates/.git
 
 Adding a new locale
 =================
