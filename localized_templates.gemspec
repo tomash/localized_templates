@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
     "lib/localized_templates/actioncontroller/base.rb",
     "lib/localized_templates/actioncontroller/layout.rb",
     "lib/localized_templates/actionview/base.rb",
-    "lib/localized_templates/actionview/partial.rb"
+    "lib/localized_templates/actionview/partials.rb"
   ]
   s.test_files = [
     "test/localized_rescue_test.rb",
