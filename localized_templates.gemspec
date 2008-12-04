@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name     = "localized_templates"
-  s.version  = "0.2"
+  s.version  = "0.2.1"
   s.date     = "2008-11-29"
   s.summary  = "Templates localization for Rails 2.2"
   s.email    = "jose.valim@gmail.com"
