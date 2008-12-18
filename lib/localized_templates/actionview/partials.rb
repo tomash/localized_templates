@@ -10,7 +10,7 @@ module ActionView
           if options.has_key?(:collection)
             render_partial_collection(options)
           else
-            _pick_partial_template(partial_path).render_partial(self, options[:object], local_assigns)
+            _pick_partial_template(partial_path, I18n.locale).render_partial(self, options[:object], local_assigns)
           end
         when ActionView::Helpers::FormBuilder
           builder_partial_path = partial_path.class.to_s.demodulize.underscore.sub(/_builder$/, '')

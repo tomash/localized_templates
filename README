@@ -2,7 +2,7 @@ Copyright (c) 2008 José Valim (jose.valim@gmail.com)
 http://www.pagestacker.com/
 http://josevalim.blogspot.com/
 License: MIT
-Version: 0.2.1
+Version: 0.3
 
 LocalizedTemplates
 ==================
@@ -13,17 +13,12 @@ You can localize your views using the following naming convention:
   <tt>pt-BR/projects/index.html.erb</tt>
   <tt>en-US/projects/edit.rss.builder</tt>
   
-  OR:
-
-  <tt>projects/pt-BR/index.html.erb</tt>
-  <tt>projects/en-US/index.html.erb</tt>
-
 And you can also localize rescue files:
 
   <tt>public/pt-BR/404.html</tt>
   <tt>public/en-US/404.html</tt>
 
-If you don't want to localize a file (like a xml file), simply don't change it and it will be
+If you don't want to localize a file (like a xml file), simply don't move it and it will be
 rendered as default to all languages.
 
 Installation

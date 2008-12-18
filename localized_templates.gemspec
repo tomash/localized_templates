@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name     = "localized_templates"
-  s.version  = "0.2.1"
-  s.date     = "2008-11-29"
+  s.version  = "0.3"
+  s.date     = "2008-12-18"
   s.summary  = "Templates localization for Rails 2.2"
   s.email    = "jose.valim@gmail.com"
   s.homepage = "http://github.com/josevalim/localized_templates"
@@ -30,8 +30,8 @@ Gem::Specification.new do |s|
     "test/fixtures/layouts/default.html.erb",
     "test/fixtures/projects/index.html.erb",
     "test/fixtures/projects/index.rss.builder",
-    "test/fixtures/projects/en-US/index.rss.builder",
-    "test/fixtures/projects/pt-BR/index.html.erb",
+    "test/fixtures/en-US/projects/index.rss.builder",
+    "test/fixtures/pt-BR/projects/index.html.erb",
     "test/fixtures/pt-BR/layouts/default.html.erb",
     "test/fixtures/public/500.html",
     "test/fixtures/public/en-US/404.html",

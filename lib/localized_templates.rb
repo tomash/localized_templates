@@ -1,17 +1,17 @@
 # = Localized templates
 # 
 # This feature extends Rails template handling and allows the use of localized
-# templates like <code>projects/pt-BR/index.html.erb</code> or
-# <code>pt-BR/projects/index.html.erb</code>. The plugin will pick the
-# template matching the currently used locale (<code>I18n#locale</code>).
+# templates on the root of your views folder like <code>pt-BR/projects/index.html.erb</code>.
+# The plugin will pick the template matching the currently used locale
+# (<code>I18n#locale</code>).
 #
-# If the localized template isn't found, the plugin will try to render
-# <code>prjects/index.html.erb</code>. If <code>index.html.erb</code> doesn't
+# If the localized template isn't found, the plugin will try to render the default
+# <code>projects/index.html.erb</code>. If <code>index.html.erb</code> doesn't
 # exist, a 404 will be raised.
 #
 # If you have a template that is the same for all languages (like a xml file)
 # just keep it without localization: <code>index.xml.builder</code>.
-
+#
 # Theoretically, we just need to overwrite _pick_template and _pick_partial_template
 # methods in order to have LocalizedTemplates, but memoize doesn't help
 # since it doesn't see locale changes and would memoize values for only one locale.

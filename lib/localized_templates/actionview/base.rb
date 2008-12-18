@@ -46,9 +46,6 @@ module ActionView
         # Try to render locale/controller/action
         if locale && template = _template_view_path_check("#{locale}/#{template_file_name}")
           template
-        # Try to render controller/locale/action
-        elsif locale && template = _template_view_path_check(template_file_name.gsub(/\//, "/#{locale}/"))
-          template
         # Try to render controller/action
         elsif template = _template_view_path_check(template_file_name)
           template
