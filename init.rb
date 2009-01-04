@@ -1,3 +1,1 @@
-# Load all source files in the lib directory.
-require 'localized_templates'
-require 'localized_rescue'
+require File.join(File.dirname(__FILE__), 'lib', 'localized_templates')
