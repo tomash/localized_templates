@@ -2,6 +2,7 @@
 ENV['RAILS_ENV'] = 'test'
 
 require File.dirname(__FILE__) + '/../../../../config/environment'
+require File.dirname(__FILE__) + '/../lib/localized_templates.rb'
 require 'test_help'
 
 FIXTURES_PATH = File.join(File.dirname(__FILE__), 'fixtures')

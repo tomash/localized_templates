@@ -1,5 +1,4 @@
 require File.dirname(__FILE__) + '/setup'
-require File.dirname(__FILE__) + '/../lib/localized_templates.rb'
 
 class ProjectsController < ActionController::Base
   layout 'default'
