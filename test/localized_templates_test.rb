@@ -15,7 +15,7 @@ class ProjectsController < ActionController::Base
   end
 end
 
-class LocalizedTemplatesTest < Test::Unit::TestCase
+class LocalizedTemplatesTest < ActionController::TestCase
 
   def setup
     @controller = ProjectsController.new
@@ -28,7 +28,7 @@ class LocalizedTemplatesTest < Test::Unit::TestCase
     get :index
 
     assert_response 200
-    assert_equal "<none>\n  none index view\n</none>", @response.body
+    assert_equal "<none>noneindexview</none>", @response.body.gsub(/\s/, '')
   end
 
   def test_render_rss_without_localization
@@ -37,7 +37,7 @@ class LocalizedTemplatesTest < Test::Unit::TestCase
     get :index
 
     assert_response 200
-    assert_equal "<none>text</none>\n", @response.body
+    assert_equal "<none>text</none>", @response.body.gsub(/\s/, '')
   end
 
   def test_render_with_localization
@@ -45,7 +45,7 @@ class LocalizedTemplatesTest < Test::Unit::TestCase
     get :index
 
     assert_response 200
-    assert_equal "<pt-BR>\n  pt-BR index view\n</pt-BR>", @response.body
+    assert_equal "<pt-BR>pt-BRindexview</pt-BR>", @response.body.gsub(/\s/, '')
   end
 
   def test_render_rss_with_localization
@@ -54,7 +54,7 @@ class LocalizedTemplatesTest < Test::Unit::TestCase
     get :index
 
     assert_response 200
-    assert_equal "<en_US>text</en_US>\n", @response.body
+    assert_equal "<en_US>text</en_US>", @response.body.gsub(/\s/, '')
   end
 
 end

@@ -1,13 +1,26 @@
 # Those lines are plugin test settings
-ENV['RAILS_ENV'] = 'test'
+require 'test/unit'
+require 'rubygems'
 
-require File.dirname(__FILE__) + '/../../../../config/environment'
+ENV["RAILS_ENV"] = "test"
+
+require 'active_support'
+require 'action_controller'
+require 'action_controller/test_case'
+require 'action_controller/test_process'
+
 require File.dirname(__FILE__) + '/../lib/localized_templates.rb'
-require 'test_help'
 
 FIXTURES_PATH = File.join(File.dirname(__FILE__), 'fixtures')
 ActionController::Base.view_paths = FIXTURES_PATH
-Rails.public_path = "#{FIXTURES_PATH}/public"
+
+# Mock Rails! :)
+#
+class Rails
+  def self.public_path
+    "#{FIXTURES_PATH}/public"
+  end
+end
 
 ActionController::Routing::Routes.draw do |map|
   map.connect ':controller/:action/:id'

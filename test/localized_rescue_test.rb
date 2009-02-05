@@ -6,7 +6,7 @@ class LocalizedRescueController < ActionController::Base
   end
 end
 
-class LocalizedRescueTest < Test::Unit::TestCase
+class LocalizedRescueTest < ActionController::TestCase
 
   def setup
     @controller = LocalizedRescueController.new

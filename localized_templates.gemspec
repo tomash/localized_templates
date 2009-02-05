@@ -1,11 +1,11 @@
 Gem::Specification.new do |s|
   s.name     = "localized_templates"
-  s.version  = "0.3.1"
+  s.version  = "0.4"
   s.date     = "2008-12-18"
-  s.summary  = "Templates localization for Rails 2.2"
+  s.summary  = "Another templates localization schema for Rails 2.3"
   s.email    = "jose.valim@gmail.com"
   s.homepage = "http://github.com/josevalim/localized_templates"
-  s.description = "Templates localization for Rails 2.2"
+  s.description = "Another templates localization schema for Rails 2.3"
   s.has_rdoc = true
   s.authors  = [ "José Valim" ]
   s.files    = [
@@ -13,13 +13,8 @@ Gem::Specification.new do |s|
     "README",
     "Rakefile",
     "lib/localized_templates.rb",
-    "lib/localized_rescue/README",
     "lib/localized_rescue/actioncontroller/rescue.rb",
-    "lib/localized_templates/README",
-    "lib/localized_templates/actioncontroller/base.rb",
-    "lib/localized_templates/actioncontroller/layout.rb",
-    "lib/localized_templates/actionview/base.rb",
-    "lib/localized_templates/actionview/partials.rb"
+    "lib/localized_templates/actionview/paths.rb",
   ]
   s.test_files = [
     "test/localized_rescue_test.rb",
