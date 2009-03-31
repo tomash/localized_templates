@@ -15,9 +15,9 @@ module ActionController
         path = "#{Rails.public_path}/#{status[0,3]}.html"
 
         if locale_path && File.exist?(locale_path)
-          render :file => locale_path, :status => status
+          render :file => locale_path, :status => status, :content_type => Mime::HTML
         elsif File.exist?(path)
-          render :file => path, :status => status
+          render :file => path, :status => status, :content_type => Mime::HTML
         else
           head status
         end
