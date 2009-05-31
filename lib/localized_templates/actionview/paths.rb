@@ -8,7 +8,13 @@ module ActionView #:nodoc:
       each do |load_path|
         if format && (template = load_path["#{I18n.locale}/#{template_path}.#{format}"])
           return template
+        #try the first fallback: usually is enough
+        elsif format && (template = load_path["#{I18n.fallbacks[I18n.locale][1]}/#{template_path}.#{format}"])
+          return template
         elsif format && (template = load_path["#{template_path}.#{format}"])
+          return template
+        #try the first fallback: usually is enough
+        elsif template = load_path["#{I18n.fallbacks[I18n.locale][1]}/#{template_path}"]
           return template
         elsif template = load_path["#{I18n.locale}/#{template_path}"]
           return template
